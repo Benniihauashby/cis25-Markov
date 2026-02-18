@@ -2,8 +2,20 @@
 #include <string>
 
 std::string joinWords(const std::string words[], int startIndex, int count){
-    return "";
-}
+    int i = 0;
+    std::string result = "";
+    while (i < count) {
+        if (i < count - 1)
+            result = result + words[startIndex + i] + " ";
+        else {result = result + words[startIndex + i];}
+        i = i + 1;
+        }
+        
+    return result;
+
+    }
+    
+
 
 int readWordsFromFile(std::string filename, std::string words[], int maxWords){
     return 0;

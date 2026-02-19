@@ -32,14 +32,25 @@ int readWordsFromFile(std::string filename, std::string words[], int maxWords){
     
     return count;
 
-    return 0;
 
 }
 
 int buildMarkovChain(const std::string words[], int numWords, int order,
                      std::string prefixes[], std::string suffixes[],
                      int maxChainSize){
-    return 0;
+    int count = 0;
+
+    for(int i = 0; i <= numWords - order - 1; i++) {
+        
+        prefixes[i] = joinWords(words, i, order);
+        suffixes[i] = words[i + order];
+
+        count = count + 1;
+
+        if (count == maxChainSize){break;}
+        
+    }
+    return count; 
 }
 
 std::string getRandomSuffix(const std::string prefixes[], const std::string suffixes[],

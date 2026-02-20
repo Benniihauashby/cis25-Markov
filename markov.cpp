@@ -1,6 +1,9 @@
 #include "markov.h"
 #include <string>
 #include <fstream>
+// for random function and different calls with ctime
+#include <cstdlib>
+#include <ctime>
 
 std::string joinWords(const std::string words[], int startIndex, int count){
     int i = 0;
@@ -55,6 +58,34 @@ int buildMarkovChain(const std::string words[], int numWords, int order,
 
 std::string getRandomSuffix(const std::string prefixes[], const std::string suffixes[],
                             int chainSize, std::string currentPrefix){
+    srand(time(0));
+    int matchCount = 0;
+    
+
+    for(int i = 0; i <= chainSize - 1; i++) {
+        if (prefixes[i] == currentPrefix) {
+            matchCount = matchCount + 1;
+        }
+    }
+    if (matchCount == 0){
+        return "";
+    }
+
+    int pick = rand() % matchCount;
+    
+    int matchIndex = 0;
+
+    for(int i = 0; i <= chainSize - 1; i++) {
+        
+        if (prefixes[i] == currentPrefix) {
+            matchIndex = matchIndex + 1;
+            if(matchIndex == pick){
+                return suffixes[i];
+            }
+        
+        }
+    }
+        
     return "";
 }
 

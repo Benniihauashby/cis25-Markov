@@ -6,7 +6,7 @@ int main() {
 
     srand(time(0));
 
-    std::cout << rand() % 19 << std::endl;
+    std::cout << rand() % 19 << " " << rand() % 10 << std::endl;
 
     return 0;
 }

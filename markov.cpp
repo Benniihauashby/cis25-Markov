@@ -22,7 +22,7 @@ std::string joinWords(const std::string words[], int startIndex, int count){
 
 
 int readWordsFromFile(std::string filename, std::string words[], int maxWords){
-    std::ifstream inFile("test.txt");
+    std::ifstream inFile(filename);
     int count = 0;
 
     if (!inFile.is_open()) {
@@ -108,7 +108,7 @@ std::string generateText(const std::string prefixes[], const std::string suffixe
 
     std::string result = prefix0;
     
-    for (int i = 0; i < numWords; i++){
+    for (int i = 0; i < numWords - 1; i++){
         std::string newWord = getRandomSuffix(prefixes, suffixes, chainSize, currentPrefix);
         if (newWord == ""){
             break;

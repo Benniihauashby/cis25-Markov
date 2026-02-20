@@ -62,7 +62,7 @@ std::string getRandomSuffix(const std::string prefixes[], const std::string suff
     int matchCount = 0;
     
 
-    for(int i = 0; i <= chainSize - 1; i++) {
+    for(int i = 0; i < chainSize; i++) {
         if (prefixes[i] == currentPrefix) {
             matchCount = matchCount + 1;
         }
@@ -75,13 +75,13 @@ std::string getRandomSuffix(const std::string prefixes[], const std::string suff
     
     int matchIndex = 0;
 
-    for(int i = 0; i <= chainSize - 1; i++) {
+    for(int i = 0; i < chainSize; i++) {
         
         if (prefixes[i] == currentPrefix) {
-            matchIndex = matchIndex + 1;
             if(matchIndex == pick){
                 return suffixes[i];
             }
+            matchIndex = matchIndex + 1;
         
         }
     }

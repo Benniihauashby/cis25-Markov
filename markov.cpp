@@ -94,7 +94,7 @@ std::string getRandomPrefix(const std::string prefixes[], int chainSize){
 
     int index = rand() % chainSize;
 
-    return prefixes[index;]
+    return prefixes[index];
     
     
     return "";

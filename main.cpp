@@ -13,26 +13,30 @@ int main() {
     // test reading from readWordsFromFile
     std::string words[1000];
     int count = readWordsFromFile("test.txt", words, 1000);
-    std::cout << "Read " << count << " words" << std::endl;
-    for (int i = 0; i < 10 && i < count; i++) {
-        std::cout << words[i] << std::endl;
-    }
+    // std::cout << "Read " << count << " words" << std::endl;
+    // for (int i = 0; i < 10 && i < count; i++) {
+    //     std::cout << words[i] << std::endl;
+    // }
 
     // test for buildMarkovChain
     std::string prefixes[10000], suffixes[10000];
     int chainSize = buildMarkovChain(words, count, 1, prefixes, suffixes, 10000);
-    for (int i = 0; i < 20 && i < chainSize; i++) {
-        std::cout << "[" << prefixes[i] << "] -> [" << suffixes[i] << "]" << std::endl;
-    }
+    // for (int i = 0; i < 20 && i < chainSize; i++) {
+    //     std::cout << "[" << prefixes[i] << "] -> [" << suffixes[i] << "]" << std::endl;
+    // }
 
-    // test for getRandomSuffix
-    for (int i = 0; i < 10; i++) {
-        std::cout << getRandomSuffix(prefixes, suffixes, chainSize, "the") << std::endl;
-    }
+    // // test for getRandomSuffix
+    // for (int i = 0; i < 10; i++) {
+    //     std::cout << getRandomSuffix(prefixes, suffixes, chainSize, "the") << std::endl;
+    // }
 
-    // test for getRandomPrefix
-    for (int i = 0; i < 5; i++) {
-    std::cout << getRandomPrefix(prefixes, chainSize) << std::endl;
-    }
+    // // test for getRandomPrefix
+    // for (int i = 0; i < 5; i++) {
+    // std::cout << getRandomPrefix(prefixes, chainSize) << std::endl;
+    // }
+
+    // test for generateText
+    std::string output = generateText(prefixes, suffixes, chainSize, 1, 20);
+    std::cout << output << std::endl;
 
 }

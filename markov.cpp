@@ -102,5 +102,24 @@ std::string getRandomPrefix(const std::string prefixes[], int chainSize){
 
 std::string generateText(const std::string prefixes[], const std::string suffixes[],
                          int chainSize, int order, int numWords){
+    std::string prefix0 = getRandomPrefix(prefixes, chainSize);
+    
+    std::string currentPrefix = prefix0;
+
+    std::string result = prefix0;
+    
+    for (int i = 0; i < numWords; i++){
+        std::string newWord = getRandomSuffix(prefixes, suffixes, chainSize, currentPrefix);
+        if (newWord == ""){
+            break;
+        }
+        result = result + " " + newWord;
+
+        currentPrefix = newWord;
+    }
+    
+    return result;
+    
+    
     return "";
 }

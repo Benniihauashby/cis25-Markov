@@ -30,4 +30,9 @@ int main() {
         std::cout << getRandomSuffix(prefixes, suffixes, chainSize, "the") << std::endl;
     }
 
+    // test for getRandomPrefix
+    for (int i = 0; i < 5; i++) {
+    std::cout << getRandomPrefix(prefixes, chainSize) << std::endl;
+    }
+
 }

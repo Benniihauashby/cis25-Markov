@@ -90,6 +90,13 @@ std::string getRandomSuffix(const std::string prefixes[], const std::string suff
 }
 
 std::string getRandomPrefix(const std::string prefixes[], int chainSize){
+    srand(time(0));
+
+    int index = rand() % chainSize;
+
+    return prefixes[index;]
+    
+    
     return "";
 }
 
